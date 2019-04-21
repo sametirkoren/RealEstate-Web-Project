@@ -1,0 +1,20 @@
+html {
+    font-size: 62.5%; // 1rem = 10px yapmış olduk.
+    box-sizing: border-box; // Genişlik veya yükseklik değeri padding ve border değerlerinide içerir.
+}
+
+*,
+*:after,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: $mainFont;
+}
+
+.container {
+    max-width: 114rem;
+    margin: 0 auto;
+}

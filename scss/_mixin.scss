@@ -1,0 +1,39 @@
+@mixin backgroundSize($parallax:inherit) {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: $parallax;
+}
+
+@mixin flexCenter($direction:row, $content : center) {
+    display: flex;
+    justify-content: $content;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin primaryButton {
+    padding: 1.4rem 2.4rem;
+    background-color: $primaryColor;
+    box-shadow: 0 0.3rem 0 0 #004bad;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: .2rem;
+    font-size: 1.5rem;
+    transition: all .3s;
+}
+
+@mixin p_line_height {
+    line-height: 2.4rem;
+}
+
+@mixin primaryButtonList {
+    border-radius: .2rem;
+    padding: 1rem 4rem;
+    border: none;
+    background-color: $primaryColor;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+}

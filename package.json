@@ -1,0 +1,20 @@
+{
+  "name": "realestate",
+  "version": "1.0.0",
+  "description": "RealEstate Project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samet",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.4.0"
+  }
+}

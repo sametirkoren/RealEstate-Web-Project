@@ -1,0 +1,585 @@
+/* Header */
+.mainHeader {
+    background-color: $primaryDark;
+
+    .main-navigation {
+
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        align-items: center;
+
+        li {
+            a {
+                text-decoration: none;
+                color: #6e7ca5;
+                transition: all .3s;
+                font-size: 1.1rem;
+
+                &:hover {
+                    color: $white;
+
+                }
+            }
+        }
+    }
+}
+
+/*  ## Header*/
+
+/* Custom Css */
+
+.owl-nav {
+    float: right;
+
+    .owl-prev {
+        margin-right: 0.5rem;
+    }
+
+    .owl-prev,
+    .owl-next {
+        font-size: 5rem !important;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+/* ## Custom Css*/
+
+
+/* Search Box */
+.searchBox {
+    width: 100%;
+    min-height: 50vh;
+    background-image: linear-gradient(to right top, rgba($primaryColor, .6), rgba($secondaryColor, .9)), url(../img/searchBoxBg.jpg);
+    @include backgroundSize;
+    @include flexCenter(column);
+
+    h1 {
+        color: $white;
+        text-shadow: 0 .2rem 1rem #1d1d1d4a;
+
+        @include mobileSize {
+            font-size: 1.2em !important;
+        }
+    }
+
+    &__inputContainer {
+        @include tabletSize {
+            min-width: 90%;
+        }
+
+
+
+        position: relative;
+        @include flexCenter;
+        background-color: rgba($white, 0.1);
+        border-radius: .2rem;
+        min-width: 40%;
+
+        @include mobileSize {
+            padding: 2rem !important;
+            font-size: 50% !important;
+            min-width: 10% !important;
+        }
+
+        .searchInput {
+            flex: 1;
+            padding: 2rem 3rem 2rem 3rem;
+            border-radius: 3rem;
+            border: none;
+            transition: all .3s;
+
+            &:hover {
+                box-shadow: 0 1rem 5rem 0 #00000036;
+            }
+
+            &:focus {
+                outline: 0;
+            }
+
+            &:hover+.searchBtn {
+                opacity: 1;
+            }
+        }
+
+        .searchBtn {
+            transition: all .3s;
+            position: absolute;
+            right: 5rem;
+            background-color: inherit;
+            border: none;
+            color: green;
+            opacity: .3;
+
+        }
+    }
+
+    &__button {
+        @include primaryButton;
+
+        @include mobileSize {
+            margin-bottom: 2rem;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            background-color: darken($primaryColor, 5%);
+            transform: translateY(6%);
+            box-shadow: none !important;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__goLink {
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        border: .2rem solid $white;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $white;
+
+        }
+
+        &:hover a {
+            color: $primaryColor;
+        }
+    }
+
+}
+
+/* ## Search Box */
+
+
+/* Features */
+
+.features {
+    background-image: linear-gradient(to right, $primaryColor, $secondaryColor);
+
+    &__cardsContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include tabletSize {
+            justify-content: center;
+        }
+
+        .featuresCardItem {
+            @include tabletSize {
+                flex: 0 0 calc((100% / 2) - 1rem);
+
+            }
+
+            @include mobileSize {
+                flex: 0 0 100%;
+            }
+
+            border-radius: .2rem;
+            display: flex;
+            flex: 0 0 calc(100% / 3 - 1rem);
+            color: $white;
+            transition: all .3s;
+
+            &__icon {
+                font-size: 4rem;
+            }
+
+            &__text {
+                p {
+                    font-size: 1.4rem;
+                    letter-spacing: 0.3px;
+                    opacity: .4;
+                    font-weight: 300;
+                    line-height: 2.4rem;
+                }
+            }
+
+            &:hover {
+                background-color: #ffffff0d;
+
+            }
+        }
+
+    }
+}
+
+/* ## Features */
+
+/* Carousel */
+
+.cardCarousel {
+    position: relative;
+
+    &__overlay {
+        display: none;
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba($primaryColor, .7), transparent);
+
+        button {
+            color: $white;
+            background-color: #FF5722;
+            border: none;
+            padding: .8rem 3rem;
+            border-radius: .2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all .3s;
+
+
+            &:hover {
+                box-shadow: 0 0.8rem 10rem #000000ad;
+                cursor: pointer;
+
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &:hover &__overlay {
+        @include flexCenter;
+    }
+}
+
+/* ## Carousel */
+
+/* Details */
+.details {
+    @include mobileSize {
+        padding: 0;
+    }
+
+    .clipPathContainer {
+        min-height: 90vh;
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        background-image: linear-gradient(to top, $white, #ffffff94), url(../img/fixedbg.jpg);
+        @include backgroundSize(fixed);
+        @include flexCenter;
+
+        @include mobileSize {
+            clip-path: inherit;
+        }
+
+        .detailsContainer {
+            min-width: 100%;
+
+            &>svg {
+                font-size: 5rem;
+                color: $randomColor2;
+
+                @include mobileSize {
+                    font-size: 4rem;
+                }
+
+                @include mobileSize {
+                    margin-top: 2rem;
+                }
+            }
+
+            h2 {
+                color: $primaryDark;
+
+                @include mobileSize {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+            }
+
+            @include flexCenter(column);
+
+            &__cards {
+                @include tabletSize {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                @include mobileSize {
+                    flex-wrap: wrap;
+                    padding: 1.3rem;
+                    justify-content: center;
+                }
+
+                min-width: 60%;
+                @include flexCenter(row, space-between);
+
+                .detailsItem {
+                    @include tabletSize {
+                        flex: 0 0 calc((100% / 3) - 1rem);
+                        margin-top: 1rem;
+                        margin-right: 1rem;
+                    }
+
+                    @include mobileSize {
+                        margin-top: 1rem;
+                        margin-right: 0.5rem;
+                        flex: 0 0 calc((100% / 2) - 1rem);
+                    }
+
+                    transition: all .3s;
+                    filter: blur(.1rem);
+                    flex: 0 0 calc((100% / 5) - 1rem);
+                    background-color: $white;
+
+                    svg {
+                        color: $randomColor2;
+                        font-size: 3rem;
+                    }
+
+                    &:hover {
+                        filter: blur(0);
+                        box-shadow: 0 2rem 4rem 0 #c1f1df;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            p {
+                @include p_line_height;
+            }
+        }
+
+    }
+}
+
+/* ## Details */
+
+/* New Details */
+
+.newDetails {
+    min-height: 100vh;
+
+    &__header {
+        p {
+            @include p_line_height;
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        @include tabletSize {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @include flexCenter(row, space-between);
+
+        .newDetailsItem {
+            @include tabletSize {
+                flex: 0 0 calc((100% / 2) - 1rem);
+                margin-top: 1.5rem;
+                margin-right: 1rem;
+
+            }
+
+            @include mobileSize {
+                flex: 0 0 100%;
+                margin-top: 1.5rem;
+            }
+
+            transition: all .3s;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 0 0 calc((100% / 3) - 1rem);
+
+            &__header {
+                overflow: hidden;
+
+                position: relative;
+                display: block;
+
+                .image_overlay {
+                    transition: all .3s;
+                    position: absolute;
+                    background-image: linear-gradient(to top, $primaryColor, transparent);
+                    width: 100%;
+                    height: 100%;
+                    transform: translateY(100%);
+
+                    &__span {
+                        opacity: 0;
+                        transition: all .5s;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        background-color: $randomColor;
+                        font-weight: bold;
+                        color: $white;
+                        transform: translateX(100%);
+                    }
+                }
+            }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+
+                .icons {
+                    display: flex;
+
+                    flex: 1;
+
+                    &__icon {
+                        background-color: $primaryLight;
+                        color: $primaryDark;
+
+                        &:hover {
+                            background-color: $randomColor;
+                            color: $white;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &__new {
+                        background-color: $primaryLight;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        color: $primaryDark;
+                        transition: all .3s;
+
+                        &:hover {
+                            transition: all .3s;
+                            background-color: $randomColor;
+                            color: $white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                h3 {
+                    color: $primaryDark;
+                }
+
+                h4 {
+                    color: #abc5e6;
+                    font-weight: normal;
+                }
+
+                .newDetailsList {
+                    list-style-type: none;
+                    @include flexCenter;
+                    flex-wrap: wrap;
+                    flex: 0 0 calc((100% / 2) - 1rem);
+
+                    li {
+                        flex: 0 0 50%;
+                        text-align: center;
+                        margin-bottom: 1rem;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+
+            &__footer {
+                button {
+                    @include primaryButtonList;
+
+                    transition: all .3s;
+
+                    &:focus {
+                        outline: none;
+
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: darken($primaryColor, 20%)
+                    }
+                }
+            }
+
+            &:hover .image_overlay {
+                transform: translateY(0);
+            }
+
+            &:hover .image_overlay__span {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            &:hover {
+                box-shadow: 0px 20px 62px 0px rgba(152, 152, 152, .2);
+            }
+
+
+        }
+
+
+    }
+
+}
+
+.endLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.endLink a {
+    color: $black;
+    text-decoration: none;
+    border-radius: 100%;
+    border: .2rem solid $black;
+    transition: all .3s;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: $primaryColor;
+        color: $white;
+        border: .2rem solid $white;
+
+    }
+}
+
+
+/* ## New Details */
+
+
+.endFooter {
+    background-color: $primaryDark;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            color: #6e7ca5;
+            font-weight: normal;
+        }
+    }
+}
